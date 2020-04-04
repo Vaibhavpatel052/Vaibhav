@@ -14,7 +14,8 @@ var validator = require('express-validator');
 var routes = require('./routes/index');
 var userRoutes = require('./routes/user');
 var salesmenRoutes = require('./routes/salesman');
-var supplierRoutes = require('./routes/supplier')
+var supplierRoutes = require('./routes/supplier');
+var customerRoutes= require('./routes/customer');
 var app = express();
 
 mongoose.connect('localhost:27017/shopping');
@@ -46,6 +47,7 @@ app.use(function(req, res, next) {
 
 app.use('/salesman', salesmenRoutes);
 app.use('/supplier',supplierRoutes);
+app.use('/customer',customerRoutes);
 app.use('/user', userRoutes);
 app.use('/', routes);
 
