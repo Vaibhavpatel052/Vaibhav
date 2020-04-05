@@ -16,6 +16,7 @@ var userRoutes = require('./routes/user');
 var salesmenRoutes = require('./routes/salesman');
 var supplierRoutes = require('./routes/supplier');
 var customerRoutes= require('./routes/customer');
+var productRoutes= require('./routes/product');
 var app = express();
 
 mongoose.connect('localhost:27017/shopping');
@@ -48,6 +49,7 @@ app.use(function(req, res, next) {
 app.use('/salesman', salesmenRoutes);
 app.use('/supplier',supplierRoutes);
 app.use('/customer',customerRoutes);
+app.use('/product',productRoutes);
 app.use('/user', userRoutes);
 app.use('/', routes);
 
